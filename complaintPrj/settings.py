@@ -25,7 +25,7 @@ SECRET_KEY = 'g)d-u^@b$qj_p73+psk1tt2^w(5m29u&r7!icg5y=u@_d*w#z-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*','ec2-54-180-18-147.ap-northeast-2.compute.amazonaws.com','54.180.18.147']
+ALLOWED_HOSTS = ['*','ec2-54-180-18-147.ap-northeast-2.compute.amazonaws.com','54.180.18.147','.ap-northeast-2.compute.amazonaws.com]
 
 
 # Application definition
