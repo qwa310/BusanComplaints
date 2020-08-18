@@ -4,23 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        input.img-button {
-        background: url( "../images/write.png") no-repeat;
-        border: none;
-        width: 32px;
-        height: 32px;
-        cursor: pointer;
-      }
-    </style>
+
 </head>
 <body>
+    {% load static %}
     <h1>민원 자동분류 사이트</h1>
-    <form>
-        <p>
-            <input type="button" class="img-button">
-        </p>
-    </form>
-    
+    <img src="{% static "admin/img/write.jpg" %}" alt="민원입력" /></button>
 </body>
 </html>
