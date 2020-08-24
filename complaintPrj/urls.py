@@ -21,6 +21,8 @@ from main import views
 urlpatterns = [
     path('', views.index, name="index"),
     path('index2/',views.index2,name = "index2"),
+    path('input/',views.complaint_input,name = "input"),
+    path('inputform/',views.complaint_input_form,name = "inputform"),
     path('admin/', admin.site.urls),
     # path('students/', include('students.urls')),
     # students라는 url오면 include통해 main앱 내부의 url참조해라

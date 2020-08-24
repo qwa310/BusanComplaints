@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <style>
+        img { display: block; margin: 0px auto; }
+    </style>
 </head>
 <body>
     {% load static %}
-    <h1>민원 자동분류 사이트</h1>
-    <button type="button" class="btn_image" id="img_btn">
-    <img src="{% static "admin/img/write.jpg" %}" alt="민원입력" onclick="alert('민원 입력 창 구현할것!');"/></button>
+    <center><h1>민원 자동분류 사이트</h1></center>
+    <a href="{% url 'inputform'%}">
+        <center><button type="button" class="btn_image" id="img_btn">
+        <img src="{% static "admin/img/write.png" %}" width="600" alt="민원입력"/></button></center>
+    </a>
 </body>
 </html>

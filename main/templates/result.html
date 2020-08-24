@@ -1,0 +1,37 @@
+{% extends '__base.html'%} 
+{% block title %} Complaint site {% endblock %}
+{% block content %}
+{% block css %} 
+  <style>
+    .myForm {
+      display: grid;
+      grid-template-columns: [labels] auto;
+      grid-auto-flow: row;
+      grid-gap: .8em;
+      background: #eee;
+      padding: 1.2em;
+    }
+    .myForm > label  {
+      grid-column: labels;
+      grid-row: auto;
+    }
+    
+  </style>
+{% endblock %}
+{% load static %}
+<br><center><h1 class="display-3">결과 페이지 </h1></center><br>
+   <li class="myForm">
+    <center> 분류 결과 : ○○구 ○○국 ○○과
+        <br>
+        지역 : {{area}}
+        <br>
+        제목 : {{title}}
+        <br>
+        민원내용 : {{text}}
+        </center>
+    </li>
+
+
+
+{% endblock %}
+<!-- {% block script %}{% endblock %} -->
