@@ -1,37 +1,375 @@
-{% extends '__base.html'%} 
-{% block title %} Complaint site {% endblock %}
-{% block content %}
-{% block css %} 
-  <style>
-    .myForm {
-      display: grid;
-      grid-template-columns: [labels] auto;
-      grid-auto-flow: row;
-      grid-gap: .8em;
-      background: #eee;
-      padding: 1.2em;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+/* Banner */
+
+
+/* Button */
+
+input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    button,
+    .button {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        border-radius: 10px;
+        border: 0;
+       
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 400;
+        height: 2.85rem;
+        line-height: 2.95rem;
+        padding: 0 1.5rem;
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+        text-transform: uppercase;
+        
     }
-    .myForm > label  {
-      grid-column: labels;
-      grid-row: auto;
+
+        input[type="submit"].icon,
+        input[type="reset"].icon,
+        input[type="button"].icon,
+        button.icon,
+        .button.icon {
+            padding-left: 1rem;
+        }
+
+            input[type="submit"].icon:before,
+            input[type="reset"].icon:before,
+            input[type="button"].icon:before,
+            button.icon:before,
+            .button.icon:before {
+                margin-right: 0.5rem;
+            }
+
+        input[type="submit"].fit,
+        input[type="reset"].fit,
+        input[type="button"].fit,
+        button.fit,
+        .button.fit {
+            display: block;
+            margin: 0 0 1rem 0;
+            width: 100%;
+        }
+
+        input[type="submit"].small,
+        input[type="reset"].small,
+        input[type="button"].small,
+        button.small,
+        .button.small {
+            font-size: 0.8rem;
+        }
+
+        input[type="submit"].big,
+        input[type="reset"].big,
+        input[type="button"].big,
+        button.big,
+        .button.big {
+            font-size: 1.35rem;
+        }
+
+        input[type="submit"].disabled, input[type="submit"]:disabled,
+        input[type="reset"].disabled,
+        input[type="reset"]:disabled,
+        input[type="button"].disabled,
+        input[type="button"]:disabled,
+        button.disabled,
+        button:disabled,
+        .button.disabled,
+        .button:disabled {
+            -moz-pointer-events: none;
+            -webkit-pointer-events: none;
+            -ms-pointer-events: none;
+            pointer-events: none;
+            opacity: 0.25;
+        }
+
+        @media screen and (max-width: 480px) {
+
+            input[type="submit"],
+            input[type="reset"],
+            input[type="button"],
+            button,
+            .button {
+                padding: 0;
+                font-size:13px;
+                margin-right:10px;
+            }
+
+        }
+
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    button,
+    .button {
+        background-color: #f2f2f2;
+        color: #000 !important;
     }
-    
-  </style>
-{% endblock %}
-{% load static %}
-<br><center><h1 class="display-3">결과 페이지 </h1></center><br>
-   <li class="myForm">
-    <center> 분류 결과 : ○○구 ○○국 ○○과
-        <br>
-        지역 : {{area}}
-        <br>
-        제목 : {{title}}
-        <br>
-        민원내용 : {{text}}
-        </center>
-    </li>
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,
+        input[type="button"]:hover,
+        button:hover,
+        .button:hover {
+            background-color: white;
+        }
+
+        input[type="submit"]:active,
+        input[type="reset"]:active,
+        input[type="button"]:active,
+        button:active,
+        .button:active {
+            background-color: #e5e5e5;
+        }
+
+        input[type="submit"].alt,
+        input[type="reset"].alt,
+        input[type="button"].alt,
+        button.alt,
+        .button.alt {
+            background-color: transparent;
+            box-shadow: inset 0 0 0 2px rgba(144, 144, 144, 0.25);
+            color: #555 !important;
+        }
+
+            input[type="submit"].alt:hover,
+            input[type="reset"].alt:hover,
+            input[type="button"].alt:hover,
+            button.alt:hover,
+            .button.alt:hover {
+                background-color: rgba(144, 144, 144, 0.075);
+            }
+
+            input[type="submit"].alt:active,
+            input[type="reset"].alt:active,
+            input[type="button"].alt:active,
+            button.alt:active,
+            .button.alt:active {
+                background-color: rgba(144, 144, 144, 0.2);
+            }
+
+            input[type="submit"].alt.icon:before,
+            input[type="reset"].alt.icon:before,
+            input[type="button"].alt.icon:before,
+            button.alt.icon:before,
+            .button.alt.icon:before {
+                color: #bbb;
+            }
+
+        input[type="submit"].special,
+        input[type="reset"].special,
+        input[type="button"].special,
+        button.special,
+        .button.special {
+            background-color:gray;
+            color: #ffffff !important;
+            
+        }
+
+            input[type="submit"].special:hover,
+            input[type="reset"].special:hover,
+            input[type="button"].special:hover,
+            button.special:hover,
+            .button.special:hover {
+                background-color: lightcoral;
+            }
+
+            input[type="submit"].special:active,
+            input[type="reset"].special:active,
+            input[type="button"].special:active,
+            button.special:active,
+            .button.special:active {
+                background-color: lightcoral;
+            }
+
+/* Banner */
+    #banner {
+        display: -ms-flexbox;
+        -ms-flex-pack: center;
+        -ms-flex-align: center;
+        -moz-align-items: center;
+        -webkit-align-items: center;
+        -ms-align-items: center;
+        align-items: center;
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        -moz-justify-content: center;
+        -webkit-justify-content: center;
+        -ms-justify-content: center;
+        justify-content: center;
+        
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-top: 0;
+        min-height: 100vh;
+        height: 100vh !important;
+        width: 100%;
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+        background-image:url('static/admin/img/picture.png');
+    }
+
+        #banner .inner {
+            -moz-transform: scale(1.0);
+            -webkit-transform: scale(1.0);
+            -ms-transform: scale(1.0);
+            transform: scale(1.0);
+            -moz-transition: opacity 1s ease, -moz-transform 1s ease;
+            -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+            -ms-transition: opacity 1s ease, -ms-transform 1s ease;
+            transition: opacity 1s ease, transform 1s ease;
+            opacity: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        #banner h1 {
+            font-size: 48px;
+            margin-bottom: 1rem;
+            color: #FFF;
+        }
+
+        #banner p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 20px;
+            margin-bottom: 3rem;
+            padding-top:10px;
+            font-weight:lighter;
+        }
+
+        #banner a {
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        #banner:before {
+            -moz-transition: opacity 3s ease;
+            -webkit-transition: opacity 3s ease;
+            -ms-transition: opacity 3s ease;
+            transition: opacity 3s ease;
+            -moz-transition-delay: 1.25s;
+            -webkit-transition-delay: 1.25s;
+            -ms-transition-delay: 1.25s;
+            transition-delay: 1.25s;
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            opacity: 0.45;
+            position: relative;
+            top: 0;
+            width: 100%;
+            z-index: 1; 
+        }
 
 
+        @media screen and (max-width: 736px) {
 
-{% endblock %}
-<!-- {% block script %}{% endblock %} -->
+            #banner {
+                min-height: 0;
+                height: auto !important;
+                padding: 6rem 2rem 4rem 2rem;
+            }
+
+                #banner .inner {
+                    width: 100%;
+                }
+
+                #banner h1 {
+                    font-size: 30px;
+                    margin-bottom: 0.5em;
+                    padding-bottom: 0;
+                }
+
+                #banner p {
+                    font-size: 15px;
+                    padding-top:10px;
+                    font-weight:lighter;
+                }
+
+                #banner br {
+                    display: none;
+                }
+
+                #banner .button {
+                    width: 100%;
+                }
+
+        }
+
+        @media screen and (max-width: 480px) {
+
+            #banner p {
+                font-size: 15px;
+            }
+
+        }
+
+        body.is-loading #banner .inner {
+            -moz-transform: scale(0.99);
+            -webkit-transform: scale(0.99);
+            -ms-transform: scale(0.99);
+            transform: scale(0.99);
+            opacity: 0;
+        }
+
+        body.is-loading #banner:before {
+            opacity: 1;
+        }
+
+      #result {
+        font-size: 1.8em; 
+        font-weight: bold; 
+        color:white;
+        position: absolute;
+        height:30px;
+        width:100%;
+        margin-bottom:70px;
+      }
+      a{
+        font-size: 20px;
+        font-weight: lighter; 
+        color:white;
+        position: absolute;
+        
+      }
+      img{
+        min-width: 100%;
+        height:auto;
+      }
+    </style>
+
+</head>
+<body>
+  <section id="banner">
+          
+            {% load static %} 
+            <img src="{% static 'admin/img/picture.png' %}" alt="" />
+              <div id="result">
+              <center style="padding:40px;">처리부서는 {{area}} ○○국 ○○과입니다. </center>
+              <a href="{% url 'inputform' %}" class="button special scrolly" style="float: inline-end; margin-left:-160px;"><center>이전으로</center></a>
+              <a href="{% url 'index2' %}" class="button special scrolly" style="float: inline-end;margin-left: 10px;"><center>조직도 보기</center></a>
+            </div>
+          
+      </section>
+    </body>
+</html>

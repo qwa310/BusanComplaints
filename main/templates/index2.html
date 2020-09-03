@@ -1,10 +1,262 @@
-{% extends '__base.html'%} 
-{% block title %} Complaint site {% endblock %}
-{% block content %}
 {% load static %}
-    <h1 class="text-primary">민원 자동분류 사이트2 </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조직도</title>
+    <style>
+        
+        #box{
+            margin-top:110px;
+            margin-left:50px;
+            margin-right:50px;
+            padding-top:10px; 
+            padding-bottom:10px; 
+            background-color:white;
+            position:absolute;
+        }
+        .pic{
+            padding:0;
+            width:100%;
+            height:auto;
+            position:absolute;
+    
+        }
+        img{
+            padding:30px;
+            width:78px;
+            height:78px;
+           
+        }
+        
+        h1{
+            position:absolute;
+            color:white;
+            margin-top:40px;
+            margin-left:524px;
+            font-size:25px;
+        }
+        
+        /* Button */
 
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    button,
+    .button {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        border-radius: 4px;
+        border: 0;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 400;
+        height: 2.85rem;
+        line-height: 2.95rem;
+        padding: 0 1.5rem;
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+        text-transform: uppercase;
+        margin-left:580px;
+        margin-bottom:10px;
+        position:absolute;
+        margin-top:470px;
+    }
 
+        input[type="submit"].icon,
+        input[type="reset"].icon,
+        input[type="button"].icon,
+        button.icon,
+        .button.icon {
+            padding-left: 1.35rem;
+        }
 
-{% endblock %}
-<!-- {% block script %} js입력할떄 넣으면됨 {% endblock %} -->
+            input[type="submit"].icon:before,
+            input[type="reset"].icon:before,
+            input[type="button"].icon:before,
+            button.icon:before,
+            .button.icon:before {
+                margin-right: 0.5rem;
+            }
+
+        input[type="submit"].fit,
+        input[type="reset"].fit,
+        input[type="button"].fit,
+        button.fit,
+        .button.fit {
+            display: block;
+            margin: 0 0 1rem 0;
+            width: 100%;
+        }
+
+        input[type="submit"].small,
+        input[type="reset"].small,
+        input[type="button"].small,
+        button.small,
+        .button.small {
+            font-size: 0.8rem;
+        }
+
+        input[type="submit"].big,
+        input[type="reset"].big,
+        input[type="button"].big,
+        button.big,
+        .button.big {
+            font-size: 1.35rem;
+        }
+
+        input[type="submit"].disabled, input[type="submit"]:disabled,
+        input[type="reset"].disabled,
+        input[type="reset"]:disabled,
+        input[type="button"].disabled,
+        input[type="button"]:disabled,
+        button.disabled,
+        button:disabled,
+        .button.disabled,
+        .button:disabled {
+            -moz-pointer-events: none;
+            -webkit-pointer-events: none;
+            -ms-pointer-events: none;
+            pointer-events: none;
+            opacity: 0.25;
+        }
+
+        @media screen and (max-width: 480px) {
+
+            input[type="submit"],
+            input[type="reset"],
+            input[type="button"],
+            button,
+            .button {
+                padding: 0px;
+                margin-left:-50px;
+            }
+
+        }
+
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    button,
+    .button {
+        background-color: #f2f2f2;
+        color: #000 !important;
+    }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,
+        input[type="button"]:hover,
+        button:hover,
+        .button:hover {
+            background-color: white;
+        }
+
+        input[type="submit"]:active,
+        input[type="reset"]:active,
+        input[type="button"]:active,
+        button:active,
+        .button:active {
+            background-color: #e5e5e5;
+        }
+
+        input[type="submit"].alt,
+        input[type="reset"].alt,
+        input[type="button"].alt,
+        button.alt,
+        .button.alt {
+            background-color: transparent;
+            box-shadow: inset 0 0 0 2px rgba(144, 144, 144, 0.25);
+            color: #555 !important;
+        }
+
+            input[type="submit"].alt:hover,
+            input[type="reset"].alt:hover,
+            input[type="button"].alt:hover,
+            button.alt:hover,
+            .button.alt:hover {
+                background-color: rgba(144, 144, 144, 0.075);
+            }
+
+            input[type="submit"].alt:active,
+            input[type="reset"].alt:active,
+            input[type="button"].alt:active,
+            button.alt:active,
+            .button.alt:active {
+                background-color: rgba(144, 144, 144, 0.2);
+            }
+
+            input[type="submit"].alt.icon:before,
+            input[type="reset"].alt.icon:before,
+            input[type="button"].alt.icon:before,
+            button.alt.icon:before,
+            .button.alt.icon:before {
+                color: #bbb;
+            }
+
+        input[type="submit"].special,
+        input[type="reset"].special,
+        input[type="button"].special,
+        button.special,
+        .button.special {
+            background-color:gray;
+            color: #ffffff !important;
+            position:absolute;
+        }
+
+            input[type="submit"].special:hover,
+            input[type="reset"].special:hover,
+            input[type="button"].special:hover,
+            button.special:hover,
+            .button.special:hover {
+                background-color: lightcoral;
+              
+            }
+
+            input[type="submit"].special:active,
+            input[type="reset"].special:active,
+            input[type="button"].special:active,
+            button.special:active,
+            .button.special:active {
+                background-color: lightcoral;
+                
+            }
+            
+    </style>
+</head>
+<body>
+    <section style="position:relative;">
+    <img class="pic" src="{% static 'admin/img/picture.png' %}" alt="" />
+    <h1>조직도 바로가기</h1>
+    <div id="box">
+    <a href="https://www.bsgangseo.go.kr/bsgangseo/contents.do?mId=0503070000" target = "_blank"><img src="{% static 'admin/img/강서구.png' %}" alt="" /></a>
+    <a href="http://www.geumjeong.go.kr/index.geumj?menuCd=DOM_000000127003004000" target = "_blank"><img src="{% static 'admin/img/금정구.png' %}" alt="" /></a>
+    <a href="https://www.gijang.go.kr/index.gijang?menuCd=DOM_000000105006001000" target = "_blank"><img src="{% static 'admin/img/기장군.png' %}" alt="" /></a>
+    <a href="https://www.bsnamgu.go.kr/index.namgu?menuCd=DOM_000000101005003000" target = "_blank"><img src="{% static 'admin/img/남구.png' %}" alt="" /></a>
+    <a href="http://www.bsdonggu.go.kr/index.donggu?menuCd=DOM_000000105002001000" target = "_blank"><img src="{% static 'admin/img/동구.png' %}" alt="" /></a>
+    <a href="https://www.dongnae.go.kr/index.dongnae?menuCd=DOM_000000107003002000" target = "_blank"><img src="{% static 'admin/img/동래구.png' %}" alt="" /></a>
+    <a href="https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103001003000" target = "_blank"><img src="{% static 'admin/img/부산진구.png' %}" alt="" /></a>
+    <a href="https://www.bsbukgu.go.kr/index.bsbukgu?menuCd=DOM_000000106004000000#" target = "_blank"><img src="{% static 'admin/img/북구.png' %}" alt="" /></a>
+    <a href="https://www.sasang.go.kr/index.sasang?menuCd=DOM_000000104003006000" target = "_blank"><img src="{% static 'admin/img/사상구.png' %}" alt="" /></a>
+    <a href="https://www.saha.go.kr/portal/contents.do?mId=0604010000" target = "_blank"><img src="{% static 'admin/img/사하구.png' %}" alt="" /></a>
+    <a href="https://www.bsseogu.go.kr/index.bsseogu?menuCd=DOM_000000104002002000" target = "_blank"><img src="{% static 'admin/img/서구.png' %}" alt="" /></a>
+    <a href="http://www.suyeong.go.kr/index.suyeong?menuCd=DOM_000000104003001001" target = "_blank"><img src="{% static 'admin/img/수영구.png' %}" alt="" /></a>
+    <a href="https://www.yeonje.go.kr/portal/contents.do?mId=0201010000" target = "_blank"><img src="{% static 'admin/img/연제구.png' %}" alt="" /></a>
+    <a href="http://www.yeongdo.go.kr/00492/00551/00562.web" target = "_blank"><img src="{% static 'admin/img/영도구.png' %}" alt="" /></a>
+    <a href="http://www.bsjunggu.go.kr/index.junggu?menuCd=DOM_000000105002001000" target = "_blank"><img src="{% static 'admin/img/중구.png' %}" alt="" /></a>
+    <a href="http://www.haeundae.go.kr/index.do?menuCd=DOM_000000101004002000" target = "_blank"><img src="{% static 'admin/img/해운대구.png' %}" alt="" /></a>
+
+    </div>
+    <a href="{% url 'index' %}" class="button special scrolly"><center>홈으로</center></a>
+</section>
+
+</body>
+</html>
+
