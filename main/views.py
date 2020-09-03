@@ -33,7 +33,7 @@ def complaint_input(request):
     # 메캅으로 text 형태소 제거하기    
     input_text =mecab.nouns(input_text)
     # 불용어 제거하기
-    stopwords = pd.read_csv('/root/teamProject/complaintPrj/BigData_Project/main/ML_Data/stop_words.csv')
+    stopwords = pd.read_csv('/root/BigData_Project/main/ML_Data/stop_words.csv' ,)
     stopwords = stopwords.stopwords.to_list()
     stopwords_set = set(stopwords)
     text_result = [word for word in input_text if not word in stopwords_set]
@@ -46,7 +46,7 @@ def complaint_input(request):
     text_list.append(text)
 
     #tfidf 벡터화 위한 단어 빈도데이터 가져오기
-    f = open("/root/teamProject/complaintPrj/BigData_Project/main/ML_Data/text_list.pickle",'rb')
+    f = open("/root/BigData_Project/main/ML_Data/text_list.pickle",'rb')
     X = pickle.load(f)
     f.close()
 
@@ -56,12 +56,12 @@ def complaint_input(request):
     text_tfidf_vec = vector_X.transform(text_list)
 
     # 학습된 xgb모델 불러오기
-    xgb = joblib.load('/root/teamProject/complaintPrj/BigData_Project/main/ML_Data/xgboost_model.pkl')
+    xgb = joblib.load('/root/BigData_Project/main/ML_Data/xgboost_model.pkl')
 
     result_output = ''
     # xgb 모델에서 결과 가져오기
     result_label = xgb.predict(text_tfidf_vec)
-    department=pd.read_csv('/root/teamProject/complaintPrj/BigData_Project/main/ML_Data/department_labels.csv')
+    department=pd.read_csv('/root/BigData_Project/main/ML_Data/department_labels.csv')
     for i in range(len(department['구'])):
         if (department['구'][i] == input_area and department['labels'][i] == result_label):
             result_output = department['과'][i]
