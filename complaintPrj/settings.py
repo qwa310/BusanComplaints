@@ -25,7 +25,10 @@ SECRET_KEY = 'g)d-u^@b$qj_p73+psk1tt2^w(5m29u&r7!icg5y=u@_d*w#z-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['wjdalsdkcla.pythonanywhere.com']
+ALLOWED_HOSTS = [
+    'localhost',
+    '.ap-northeast-2.compute.amazonaws.com',
+    ]
 
 
 # Application definition
