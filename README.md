@@ -53,11 +53,11 @@ MINONE 프로젝트는 부산광역시 민원의 통합적 관리와 업무 간�
 -----------------------------------------------------------------------------------
 
 ## ROLE
-### - KANG : DATA CRAWLING, DATA PREPROCESSING, DEVELOP ML MODEL
-### -  [PARK](https://github.com/qwa310) : DATA CRAWLING, DATA PREPROCESSING, DEVELOP ML MODEL, FRONT-END
-### - LEE : DATA CRAWLING, DATA PREPROCESSING, DEVELOP ML MODEL, MAKE MATERIALS
-### - CHA : DATA CRAWLING, DATA PREPROCESSING, DEVELOP ML MODEL, BACK-END, PR(PRESENTER)
-### - CHOI : DATA CRAWLING, DATA PREPROCESSING, DEVELOP ML MODEL, MAKE MATERIALS
+### - KANG : 데이터 크롤링, 전처리, ML 모델 개발
+### -  [PARK](https://github.com/qwa310) : 데이터 크롤링, 전처리, ML 모델 개발, FRONT-END
+### - LEE : 데이터 크롤링, 전처리, ML 모델 개발, 발표자료 준비
+### - CHA : 데이터 크롤링, 전처리, ML 모델 개발, BACK-END, 발표자
+### - CHOI : 데이터 크롤링, 전처리, ML 모델 개발, 발표자료 준비
 
 --------------------------------------------------------------------------------------
 
