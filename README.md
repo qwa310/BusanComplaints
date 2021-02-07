@@ -1,4 +1,5 @@
-# 📌 MINONE / 부산광역시 온라인 민원 자동분류 사이트 📌
+# 📌 부산광역시 온라인 민원 자동분류 사이트 📌
+## TEAM : MINONE
 
 ---------------------------------------------------------------------------
 
@@ -31,15 +32,15 @@ MINONE 프로젝트는 부산광역시 민원의 통합적 관리와 업무 간�
 
 ### - GET STARTED : 시작 화면
 
-![스크린샷(32)](https://user-images.githubusercontent.com/46439700/107152151-99767980-69a9-11eb-9b38-bc2a2372ddd2.png)
+![스크린샷(90)](https://user-images.githubusercontent.com/46439700/107152227-0d188680-69aa-11eb-9548-44b1fbe409c7.png)
 
 ### - INPUT CONTEXT : 일반 민원 사이트와 같이 거주지, 제목, 민원내용 입력
 
-![스크린샷(90)](https://user-images.githubusercontent.com/46439700/107152227-0d188680-69aa-11eb-9548-44b1fbe409c7.png)
+![스크린샷(91)](https://user-images.githubusercontent.com/46439700/107152372-d55e0e80-69aa-11eb-9621-52ca2b3313a1.png)
 
 ### - LOADING : ML을 사용하다보니 결과 값이 출력되는 시간이 걸려서 그동안 로딩 화면을 보여줌
 
-![스크린샷(91)](https://user-images.githubusercontent.com/46439700/107152372-d55e0e80-69aa-11eb-9621-52ca2b3313a1.png)
+![스크린샷(103)](https://user-images.githubusercontent.com/46439700/107154010-e2333000-69b3-11eb-9ae7-2f0044e52a0b.png)
 
 ### - OUTPUT : 사용자가 작성한 민원 내용을 기반으로 ML MODEL 의 예측 결과값을 보여줌: 민원 처리 부서
 
@@ -53,7 +54,7 @@ MINONE 프로젝트는 부산광역시 민원의 통합적 관리와 업무 간�
 
 ## ROLE
 ### - KANG : DATA CRAWLING, DATA PREPROCESSING, DEVELOP ML MODEL
-### - PARK : DATA CRAWLING, DATA PREPROCESSING, DEVELOP ML MODEL, FRONT-END
+### -  [PARK](https://github.com/qwa310) : DATA CRAWLING, DATA PREPROCESSING, DEVELOP ML MODEL, FRONT-END
 ### - LEE : DATA CRAWLING, DATA PREPROCESSING, DEVELOP ML MODEL, MAKE MATERIALS
 ### - CHA : DATA CRAWLING, DATA PREPROCESSING, DEVELOP ML MODEL, BACK-END, PR(PRESENTER)
 ### - CHOI : DATA CRAWLING, DATA PREPROCESSING, DEVELOP ML MODEL, MAKE MATERIALS
